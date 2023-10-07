@@ -1,132 +1,26 @@
-Title: Boys
-Year of Release: 1991
-Director: 
-Language: 
-Duration: 0 minutes
-Genres: 
-Overview: 
-TMDB URL: https://www.themoviedb.org/movie/613574
-LB URL: https://letterboxd.com/film/boys-1991-1/
-IMDB URL: https://www.imdb.com/title/None/
-Poster URL: https://image.tmdb.org/t/p/original//rAaTzXEfkftG7dEu8XMoR0w0QFi.jpg
-
-Title: Rebels of the Neon God
-Year of Release: 1992
-Director: Tsai Ming-liang
-Language: Mandarin
-Duration: 106 minutes
-Genres: Drama, Crime
-Overview: Defying his parents, disaffected youth Hsiao Kang drops out of the local cram school to head for the bright lights of downtown Taipei. He falls in with Ah Tze, a young hoodlum, and their relationship is a confused mixture of hero-worship and rivalry that soon leads to trouble.
-TMDB URL: https://www.themoviedb.org/movie/57564
-LB URL: https://letterboxd.com/film/rebels-of-the-neon-god/
-IMDB URL: https://www.imdb.com/title/tt0103935/
-Poster URL: https://image.tmdb.org/t/p/original//s2QftskVxPGHRfMQxIPcNvYpXfX.jpg
-
-Title: Vive L'Amour
+Title: The Shawshank Redemption
 Year of Release: 1994
-Director: Tsai Ming-liang
-Language: Mandarin
-Duration: 118 minutes
-Genres: Drama
-Overview: Three lonely young denizens of Taipei unknowingly share an apartment: Mei, a real estate agent who uses it for her sexual affairs; Ah-jung, her current lover; and Hsiao-kang, who's stolen the key and uses the apartment as a retreat.
-TMDB URL: https://www.themoviedb.org/movie/11985
-LB URL: https://letterboxd.com/film/vive-lamour/
-IMDB URL: https://www.imdb.com/title/tt0109066/
-Poster URL: https://image.tmdb.org/t/p/original//kzT7WvRaolavasYSWnaefGUx8Wi.jpg
-
-Title: The River
-Year of Release: 1997
-Director: Tsai Ming-liang
-Language: Mandarin
-Duration: 116 minutes
-Genres: Romance, Drama
-Overview: A young man develops severe neck pain after swimming in a polluted river for a movie shoot, but nobody can provide him any relief.
-TMDB URL: https://www.themoviedb.org/movie/54291
-LB URL: https://letterboxd.com/film/the-river-1997/
-IMDB URL: https://www.imdb.com/title/tt0119263/
-Poster URL: https://image.tmdb.org/t/p/original//kXI7D8JUR5RhgbHzHTDI6AhNRy4.jpg
-
-Title: The Hole
-Year of Release: 1998
-Director: Brian Challis
+Director: Frank Darabont
+Countries: United States of America
 Language: English
-Duration: 12 minutes
-Genres: Comedy
-Overview: A short directed by Brian Challis.
-TMDB URL: https://www.themoviedb.org/movie/253906
-LB URL: https://letterboxd.com/film/the-hole-1998/
-IMDB URL: https://www.imdb.com/title/tt0219789/
-Poster URL: https://image.tmdb.org/t/p/original/None
+Duration: 142 minutes
+Genres: Drama, Crime
+Overview: Framed in the 1940s for the double murder of his wife and her lover, upstanding banker Andy Dufresne begins a new life at the Shawshank prison, where he puts his accounting skills to work for an amoral warden. During his long stretch in prison, Dufresne comes to be admired by the other inmates -- including an older prisoner named Red -- for his integrity and unquenchable sense of hope.
+TMDB URL: https://www.themoviedb.org/movie/278
+LB URL: https://letterboxd.com/film/the-shawshank-redemption/
+IMDB URL: https://www.imdb.com/title/tt0111161/
+Poster URL: https://image.tmdb.org/t/p/original//lyQBXzOQSuE59IsHyhrp0qIiPAz.jpg
 
-Title: What Time Is It There?
-Year of Release: 2001
-Director: Tsai Ming-liang
-Language: English, Mandarin, French
-Duration: 116 minutes
-Genres: Drama, Romance
-Overview: When a young street vendor with a grim home life meets a woman on her way to Paris, they forge an instant connection. He changes all the clocks in Taipei to French time, as he watches François Truffaut's Les 400 Coups; she has a strange encounter with its now-aging star, Jean-Pierre Leaud.
-TMDB URL: https://www.themoviedb.org/movie/24166
-LB URL: https://letterboxd.com/film/what-time-is-it-there/
-IMDB URL: https://www.imdb.com/title/tt0269746/
-Poster URL: https://image.tmdb.org/t/p/original//dRsZF1I4s4jx99wEyZyIsOpu3Uw.jpg
-
-Title: The Skywalk Is Gone
-Year of Release: 2002
-Director: Tsai Ming-liang
-Language: Mandarin
-Duration: 22 minutes
-Genres: Comedy, Drama
-Overview: A young woman wandering around meets a young man going to a casting call for a pornographic film.
-TMDB URL: https://www.themoviedb.org/movie/179129
-LB URL: https://letterboxd.com/film/the-skywalk-is-gone/
-IMDB URL: https://www.imdb.com/title/tt0334372/
-Poster URL: https://image.tmdb.org/t/p/original//7XQbBLbDJp8REGmqiVpulJKMvZl.jpg
-
-Title: The Wayward Cloud
-Year of Release: 2005
-Director: Tsai Ming-liang
-Language: Mandarin
-Duration: 114 minutes
-Genres: Comedy, Drama, Romance
-Overview: Hsiao-Kang, now working as an adult movie actor, meets Shiang-chyi once again. Meanwhile, the city of Taipei faces a water shortage that makes the sales of watermelons skyrocket.
-TMDB URL: https://www.themoviedb.org/movie/36253
-LB URL: https://letterboxd.com/film/the-wayward-cloud/
-IMDB URL: https://www.imdb.com/title/tt0445760/
-Poster URL: https://image.tmdb.org/t/p/original//b4p3bJ1Dc850lqAygU4cLqVhkLQ.jpg
-
-Title: Goodbye, Dragon Inn
-Year of Release: 2003
-Director: Tsai Ming-liang
-Language: Mandarin, Japanese
-Duration: 82 minutes
-Genres: Drama, Comedy
-Overview: On a dark and rainy night, a historic and regal Taipei cinema sees its final film: 1967 martial arts feature "Dragon Inn". As the film plays, the lives of the theater's various employees and patrons intersect, and two ghostly actors arrive to mourn the passing of an era.
-TMDB URL: https://www.themoviedb.org/movie/56616
-LB URL: https://letterboxd.com/film/goodbye-dragon-inn/
-IMDB URL: https://www.imdb.com/title/tt0377556/
-Poster URL: https://image.tmdb.org/t/p/original//js1uTY2FuKspVRQWLudFkEteFI5.jpg
-
-Title: I Don't Want to Sleep Alone
-Year of Release: 2006
-Director: Tsai Ming-liang
-Language: Bengali, Mandarin, Malay
-Duration: 118 minutes
-Genres: Drama, Romance
-Overview: Rawang, an immigrant from Bangladesh living in awful conditions, takes pity on a Chinese man, Hsiao-kang, who is beaten up and left in the street. Rawang lovingly nurses him on a mattress he found. When he is almost healed, Hsiao-kang meets the waitress Chyi. His love for Rawang is put to the test.
-TMDB URL: https://www.themoviedb.org/movie/12130
-LB URL: https://letterboxd.com/film/i-dont-want-to-sleep-alone/
-IMDB URL: https://www.imdb.com/title/tt0855824/
-Poster URL: https://image.tmdb.org/t/p/original//shrlbNjWJ5WYSICJEbs2YIw1gaV.jpg
-
-Title: Madame Butterfly
-Year of Release: 2009
-Director: Tsai Ming-liang
-Language: Malay
-Duration: 36 minutes
-Genres: Drama
-Overview: Free interpretation of the myth. Tsai Ming-liang propels a woman neglected by her lover in the mob of the bus station of Kuala Lumpur.
-TMDB URL: https://www.themoviedb.org/movie/222142
-LB URL: https://letterboxd.com/film/madame-butterfly-2009/
-IMDB URL: https://www.imdb.com/title/tt1569940/
-Poster URL: https://image.tmdb.org/t/p/original//ooUmq9i4B2ISSHexC7ewoOGMX3n.jpg
+Title: Inception
+Year of Release: 2010
+Director: Christopher Nolan
+Countries: United Kingdom, United States of America
+Language: English, French, Japanese, Swahili
+Duration: 148 minutes
+Genres: Action, Science Fiction, Adventure
+Overview: Cobb, a skilled thief who commits corporate espionage by infiltrating the subconscious of his targets is offered a chance to regain his old life as payment for a task considered to be impossible: "inception", the implantation of another person's idea into a target's subconscious.
+TMDB URL: https://www.themoviedb.org/movie/27205
+LB URL: https://letterboxd.com/film/inception/
+IMDB URL: https://www.imdb.com/title/tt1375666/
+Poster URL: https://image.tmdb.org/t/p/original//oYuLEt3zVCKq57qu2F8dT7NIa6f.jpg
 
