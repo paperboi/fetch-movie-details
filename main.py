@@ -8,8 +8,7 @@
 import requests
 import os
 
-# tmdb_api_key = os.environ['TMDB_KEY']
-tmdb_api_key = "7aca1bdadd70b55f1b9b25fe9e35d6e3"
+tmdb_api_key = os.environ['TMDB_KEY']
 
 # Function to get the redirected URL of a given URL
 def get_redirected_url(movie_id):
