@@ -1,12 +1,9 @@
-# This project is a movie details fetchers that utilizes the themoviedb.org API to retrieve information about movies
-# based on the film title and year of release. It provides a simple and convenient way to gather comprehensive details
-# about movies, including the title, release date, overview, poster URL, director, language, and duration.
-# By utilizing the themoviedb.org API, this project enables users to quickly and easily access comprehensive movie details
-# based on the film title and year of release. Whether for personal use or as part of a larger movie-related application,
-# this project provides a valuable resource for movie enthusiasts, researchers, and developers alike.
-
 import requests
 import os
+
+from dotenv import load_dotenv
+
+load_dotenv()
 
 tmdb_api_key = os.environ['TMDB_KEY']
 
