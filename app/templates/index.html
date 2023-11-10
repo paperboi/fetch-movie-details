@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movie Information</title>
+    <title>Find This Film</title>
     <!-- Include Bulma CSS -->
     <link
       rel="stylesheet"
@@ -24,35 +24,39 @@
         <div class="card">
           <div class="card-content">
             <form method="POST" action="/results">
-              <div class="field">
-                <!-- <label for="film_name">Film Name:</label> -->
-                <div class="control">
-                  <input
-                    class="input is-normal"
-                    type="text"
-                    name="film_name"
-                    placeholder="Film Name"
-                    required
-                  />
-                </div>
-              </div>
-              <div class="field">
-                <!-- <label for="year_of_release">Year of Release:</label> -->
-                <div class="control">
-                  <input
-                    class="input is-normal"
-                    type="text"
-                    name="year_of_release"
-                    placeholder="Year of Release"
-                    required
-                  />
-                </div>
-              </div>
-              <div class="field">
-                <div class="control">
-                  <button class="button is-primary" type="submit">
-                    Get Details
-                  </button>
+              <div class="field is-horizontal">
+                <div class="field-body">
+                  <div class="field">
+                    <!-- <label for="film_name">Film Name:</label> -->
+                    <div class="control">
+                      <input
+                        class="input is-normal"
+                        type="text"
+                        name="film_name"
+                        placeholder="Film Name"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="field">
+                    <!-- <label for="year_of_release">Year of Release:</label> -->
+                    <div class="control">
+                      <input
+                        class="input is-normal"
+                        type="text"
+                        name="year_of_release"
+                        placeholder="Year of Release"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="field">
+                    <div class="control">
+                      <button class="button is-primary" type="submit">
+                        Get Details
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </form>
@@ -60,7 +64,6 @@
         </div>
       </div>
     </section>
-
     <footer class="footer">
       <div class="content has-text-centered">
         <p>
