@@ -8,6 +8,7 @@ def index():
 
 @app.route('/results', methods=['POST'])
 def get_movie_details():
+    
     film_name = request.form['film_name']
     year_of_release = request.form['year_of_release']
     
