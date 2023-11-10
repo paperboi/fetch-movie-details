@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Information</title>
+    <!-- Include Bulma CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <section class="section">
+      <h1 class="title">Movie Details Fetcher</h1>
+      <h2 class="subtitle">
+        This project leverages the themoviedb.org API to retrieve comprehensive
+        movie details, simplifying access to film information by
+        <strong>title and release year</strong>.
+      </h2>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="card">
+          <div class="card-content">
+            <form method="POST" action="/results">
+              <div class="field">
+                <label for="film_name">Film Name:</label>
+                <div class="control">
+                  <input
+                    class="input is-normal"
+                    type="text"
+                    name="film_name"
+                    placeholder="Inception"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="field">
+                <label for="year_of_release">Year of Release:</label>
+                <div class="control">
+                  <input
+                    class="input is-normal"
+                    type="text"
+                    name="year_of_release"
+                    placeholder="2010"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <button class="button is-primary" type="submit">
+                    Get Details
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>Bulma</strong> by
+          <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is
+          licensed
+          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The
+          website content is licensed
+          <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+            >CC BY NC SA 4.0</a
+          >.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

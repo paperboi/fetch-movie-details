@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Information</title>
+    <!-- Include Bulma CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <!-- Toast notification -->
+    <div
+      id="toast"
+      style="position: fixed; top: 10px; right: 10px; z-index: 1000"
+      class="notification is-success is-light is-hidden"
+    >
+      Copied to clipboard
+    </div>
+
+    <div
+      id="toast2"
+      style="position: fixed; top: 10px; right: 10px; z-index: 1000"
+      class="notification is-danger is-light is-hidden"
+    >
+      Could not copy the content
+    </div>
+
+    <section class="section">
+      <h1 class="title">Movie Details Fetcher</h1>
+      <h2 class="subtitle">
+        This project leverages the themoviedb.org API to retrieve comprehensive
+        movie details, simplifying access to film information by
+        <strong>title and release year</strong>.
+      </h2>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="card">
+          <div class="card-content">
+            <form method="POST" action="/results">
+              <div class="field">
+                <label for="film_name">Film Name:</label>
+                <div class="control">
+                  <input
+                    class="input is-normal"
+                    type="text"
+                    name="film_name"
+                    placeholder="Inception"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="field">
+                <label for="year_of_release">Year of Release:</label>
+                <div class="control">
+                  <input
+                    class="input is-normal"
+                    type="text"
+                    name="year_of_release"
+                    placeholder="2010"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <button class="button is-primary" type="submit">
+                    Get Details
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      {% for result in results %} {% if 'error' in result %}
+        <div class="container">
+          <div class="card">
+            <div class="card-content">
+              <div class="columns">
+                <div class="column">
+                  <h3 class="title is-3">No Results Found</h3>
+                  <p>
+                    Sorry, no movie details were found for the provided film title
+                    and release year.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% else %}
+        <div class="card">
+          <div class="card-content">
+            <div class="columns">
+              <div class="column is-one-fifth">
+                <figure class="image is-256x256">
+                  <img src="{{result.poster_url}}" alt="{{result.title}}" />
+                </figure>
+                <button
+                  class="button is-small is-full-width is-light my-2"
+                  onclick="copyToClipboard('{{result.poster_url}}')"
+                >
+                  Copy
+                </button>
+              </div>
+              <div class="column">
+                <p>
+                  <strong>Title:</strong>
+                  {{result.title}}
+                  <button
+                    class="button is-small is-responsive is-light ml-2"
+                    onclick="copyToClipboard('{{result.title}}')"
+                  >
+                    Copy
+                  </button>
+                </p>
+                <p>
+                  <strong>Year of Release:</strong>
+                  {{result.year_of_release}}
+                  <button
+                    class="button is-small is-responsive is-light ml-2"
+                    onclick="copyToClipboard('{{result.year_of_release}}')"
+                  >
+                    Copy
+                  </button>
+                </p>
+                <p>
+                  <strong>Director:</strong>
+                  {{result.director}}
+                  <button
+                    class="button is-small is-responsive is-light ml-2"
+                    onclick="copyToClipboard('{{result.director}}')"
+                  >
+                    Copy
+                  </button>
+                </p>
+                <p>
+                  <strong>Countries:</strong>
+                  {{result.countries}}
+                  <button
+                    class="button is-small is-responsive is-light ml-2"
+                    onclick="copyToClipboard('{{result.countries}}')"
+                  >
+                    Copy
+                  </button>
+                </p>
+                <p>
+                  <strong>Language:</strong>
+                  {{result.language}}
+                  <button
+                    class="button is-small is-responsive is-light ml-2"
+                    onclick="copyToClipboard('{{result.language}}')"
+                  >
+                    Copy
+                  </button>
+                </p>
+                <p>
+                  <strong>Runtime:</strong>
+                  {{result.runtime}}
+                  <button
+                    class="button is-small is-responsive is-light ml-2"
+                    onclick="copyToClipboard('{{result.runtime}}')"
+                  >
+                    Copy
+                  </button>
+                </p>
+                <p>
+                  <strong>Genres:</strong>
+                  {{result.genres}}
+                  <button
+                    class="button is-small is-responsive is-light ml-2"
+                    onclick="copyToClipboard('{{result.genres}}')"
+                  >
+                    Copy
+                  </button>
+                </p>
+                <p>
+                  <strong>Overview:</strong> {{result.overview}}
+                  <button
+                    class="button is-small is-responsive is-light ml-2"
+                    onclick="copyToClipboard('{{result.overview}}')"
+                  >
+                    Copy
+                  </button>
+                </p>
+                <p>
+                  <a href="{{result.tmdb_url}}">TMDB</a>
+                  <button
+                    class="button is-small is-responsive is-light ml-2"
+                    onclick="copyToClipboard('{{result.tmdb_url}}')"
+                  >
+                    Copy
+                  </button>
+                </p>
+                <p>
+                  <a href="{{result.lb_url}}">Letterboxd</a>
+                  <button
+                    class="button is-small is-responsive is-light ml-2"
+                    onclick="copyToClipboard('{{result.lb_url}}')"
+                  >
+                    Copy
+                  </button>
+                </p>
+                <p>
+                  <a href="{{result.imdb_url}}">IMDB</a>
+                  <button
+                    class="button is-small is-responsive is-light ml-2"
+                    onclick="copyToClipboard('{{result.imdb_url}}')"
+                  >
+                    Copy
+                  </button>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %} {% endfor %}
+    </section>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>Bulma</strong> by
+          <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is
+          licensed
+          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The
+          website content is licensed
+          <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+            >CC BY NC SA 4.0</a
+          >.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      function copyToClipboard(text) {
+        navigator.clipboard
+          .writeText(text)
+          .then(function () {
+            // Show the toast notification
+            const toast = document.getElementById("toast");
+            toast.classList.remove("is-hidden");
+            setTimeout(function () {
+              toast.classList.add("is-hidden");
+            }, 1000);
+          })
+          .catch(function (err) {
+            const toast = document.getElementById("toast2");
+            toast.classList.remove("is-hidden");
+            setTimeout(function () {
+              toast.classList.add("is-hidden");
+            }, 1000);
+          });
+      }
+    </script>
+  </body>
+</html>
