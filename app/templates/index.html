@@ -9,17 +9,25 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
+    <!-- Custom CSS -->
+    <style>
+      .is-fullheight-100vh{
+        height: 100vh;
+      }
+    </style>
   </head>
-  <body>
-    <section class="section">
-      <h1 class="title">Find This Film</h1>
-      <h2 class="subtitle">
-        This project leverages the themoviedb.org API to retrieve comprehensive
-        movie details, simplifying access to film information by
-        <strong>title and release year</strong>.
-      </h2>
-    </section>
-    <section class="section">
+  <body class="columns is-flex-direction-column is-fullheight-100vh">
+    <header class="column is-narrow">
+      <section class="section">
+        <h1 class="title">Find This Film</h1>
+        <h2 class="subtitle">
+          This project leverages the themoviedb.org API to retrieve comprehensive
+          movie details, simplifying access to film information by
+          <strong>title and release year</strong>.
+        </h2>
+      </section>
+    </header>
+    <section class="column section">
       <div class="container">
         <div class="card">
           <div class="card-content">
@@ -64,7 +72,7 @@
         </div>
       </div>
     </section>
-    <footer class="footer">
+    <footer class="column is-narrow footer">
       <div class="content has-text-centered">
         <p>
           Data provided by <a href="https://www.themoviedb.org/">TMDB</a>. Built
