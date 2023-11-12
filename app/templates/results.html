@@ -9,10 +9,54 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
+    <!-- Include Bulma Carousel -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css">
     <!-- Custom CSS -->
     <style>
-      .is-fullheight-100vh{
+      .is-fullheight-100vh {
         height: 100vh;
+      }
+      .carousel {
+        overflow: hidden;
+      }
+      .poster-item {
+        position: relative;
+      }
+
+      /* Overlay style*/
+      .poster-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      /* Text style */
+      .poster-item span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      
+      /* Show overlay and text on hover */
+      .poster-item:hover::before, .poster-item:hover span {
+        opacity: 1;
+        cursor: pointer;
+        z-index: 1;
+      }
+      .poster-item figure {
+        padding: 0 3rem;
       }
     </style>
   </head>
@@ -58,7 +102,7 @@
                         class="input is-normal"
                         type="text"
                         name="film_name"
-                        placeholder="Film Name"
+                        placeholder="Film Name*"
                         required
                       />
                     </div>
@@ -110,16 +154,19 @@
         <div class="card">
           <div class="card-content">
             <div class="columns">
-              <div class="column is-one-fifth">
-                <figure class="image is-256x256">
-                  <img src="{{result.poster_url}}" alt="{{result.title}}" />
-                </figure>
-                <button
-                  class="button is-small is-full-width is-light my-2"
-                  onclick="copyToClipboard('{{result.poster_url}}')"
-                >
-                  Copy
-                </button>
+              <div class="column is-one-quarter">
+                <div class="container is-clipped">
+                  <div id="poster-carousel" class="carousel">
+                    {% for poster_url in result.poster_paths %}
+                    <div class="poster-item" onclick="copyToClipboard('{{poster_url}}')">
+                      <span>Click to copy</span>
+                      <figure class="image is-256x256">
+                        <img src="{{poster_url}}" alt="{{result.title}}" />
+                      </figure>
+                    </div>
+                    {% endfor %}
+                  </div>
+                </div>
               </div>
               <div class="column">
                 <p>
@@ -246,6 +293,8 @@
       </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
+
     <script>
       function copyToClipboard(text) {
         navigator.clipboard
@@ -266,6 +315,16 @@
             }, 1000);
           });
       }
+
+      bulmaCarousel.attach('#poster-carousel', {
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,  
+        pauseOnHover: true,
+        navigation: true,
+        pagination: false
+      });
     </script>
   </body>
 </html>

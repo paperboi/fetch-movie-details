@@ -54,11 +54,21 @@ def fetch_movie_details(film_name, year_of_release):
       lb_url = get_redirected_url(movie_id)
       imdb_url = f"https://www.imdb.com/title/{movie_data['imdb_id']}/"
       overview = movie_data['overview']
-      poster_url = f"https://image.tmdb.org/t/p/original/{movie_data['poster_path']}"
+      poster_paths = ''
       director = ''
       language = ''
       runtime = ''
 
+      # Fetch poster gallery
+      images_endpoint = f"https://api.themoviedb.org/3/movie/{movie_id}/images?api_key={tmdb_api_key}"
+      images_response = requests.get(images_endpoint)
+
+      if images_response.status_code == 200:
+          images_data = images_response.json()
+          poster_paths = [f"https://image.tmdb.org/t/p/original{poster['file_path']}" for poster in images_data['posters']]
+      else:
+          poster_paths = [f"https://image.tmdb.org/t/p/original/{movie_data['poster_path']}"]
+      
       # Fetch genre details
       genres = movie_data['genres']
       genre_names = [genre['name'] for genre in genres]
@@ -103,10 +113,10 @@ def fetch_movie_details(film_name, year_of_release):
         'runtime': runtime,
         'genres': genre_list,
         'overview': overview,
-        'poster_url': poster_url,
         'tmdb_url': tmdb_url,
         'lb_url': lb_url,
         'imdb_url': imdb_url,
+        'poster_paths': poster_paths
       }
 
       return result
