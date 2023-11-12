@@ -49,6 +49,7 @@ def fetch_movie_details(film_name, year_of_release):
 
       # Extract relevant details
       title = movie_data['title']
+      release_year = movie_data['release_date'][:4]
       tmdb_url = f"https://www.themoviedb.org/movie/{movie_id}"
       lb_url = get_redirected_url(movie_id)
       imdb_url = f"https://www.imdb.com/title/{movie_data['imdb_id']}/"
@@ -95,7 +96,7 @@ def fetch_movie_details(film_name, year_of_release):
       # Prepare the result dictionary
       result = {
         'title': title,
-        'year_of_release': year_of_release,
+        'year_of_release': release_year,
         'director': director,
         'countries': countries_list,
         'language': language,
