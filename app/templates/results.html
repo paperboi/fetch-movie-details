@@ -10,7 +10,15 @@
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
     <!-- Include Bulma Carousel -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css"
+    />
+    <!-- Include Bulma Tooltip -->
+    <link
+      rel="stylesheet"
+      href="https://bulma-tooltip.netlify.app//css/bulma-tooltip.min.css"
+    />
     <!-- Custom CSS -->
     <style>
       .is-fullheight-100vh {
@@ -48,15 +56,25 @@
         opacity: 0;
         transition: opacity 0.3s ease;
       }
-      
+
       /* Show overlay and text on hover */
-      .poster-item:hover::before, .poster-item:hover span {
+      .poster-item:hover::before,
+      .poster-item:hover span {
         opacity: 1;
         cursor: pointer;
         z-index: 1;
       }
       .poster-item figure {
         padding: 0 3rem;
+      }
+
+      /* Underline on hover */
+      span.underline-on-hover {
+        cursor: pointer;
+      }
+      /* Add the underline on hover */
+      span.underline-on-hover:hover {
+        text-decoration: underline;
       }
     </style>
   </head>
@@ -82,8 +100,8 @@
       <section class="section">
         <h1 class="title">Find This Film</h1>
         <h2 class="subtitle">
-          This project leverages the themoviedb.org API to retrieve comprehensive
-          movie details, simplifying access to film information by
+          This project leverages the themoviedb.org API to retrieve
+          comprehensive movie details, simplifying access to film information by
           <strong>title and release year</strong>.
         </h2>
       </section>
@@ -135,150 +153,148 @@
 
     <section class="column section">
       {% for result in results %} {% if 'error' in result %}
-        <div class="container">
-          <div class="card">
-            <div class="card-content">
-              <div class="columns">
-                <div class="column">
-                  <h3 class="title is-3">No Results Found</h3>
-                  <p>
-                    Sorry, no movie details were found for the provided film title
-                    and release year.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      {% else %}
+      <div class="container">
         <div class="card">
           <div class="card-content">
             <div class="columns">
-              <div class="column is-one-quarter">
-                <div class="container is-clipped">
-                  <div id="poster-carousel" class="carousel">
-                    {% for poster_url in result.poster_paths %}
-                    <div class="poster-item" onclick="copyToClipboard('{{poster_url}}')">
-                      <span>Click to copy</span>
-                      <figure class="image is-256x256">
-                        <img src="{{poster_url}}" alt="{{result.title}}" />
-                      </figure>
-                    </div>
-                    {% endfor %}
-                  </div>
-                </div>
-              </div>
               <div class="column">
+                <h3 class="title is-3">No Results Found</h3>
                 <p>
-                  <strong>Title:</strong>
-                  {{result.title}}
-                  <button
-                    class="button is-small is-responsive is-light ml-2"
-                    onclick="copyToClipboard('{{result.title}}')"
-                  >
-                    Copy
-                  </button>
-                </p>
-                <p>
-                  <strong>Year of Release:</strong>
-                  {{result.year_of_release}}
-                  <button
-                    class="button is-small is-responsive is-light ml-2"
-                    onclick="copyToClipboard('{{result.year_of_release}}')"
-                  >
-                    Copy
-                  </button>
-                </p>
-                <p>
-                  <strong>Director:</strong>
-                  {{result.director}}
-                  <button
-                    class="button is-small is-responsive is-light ml-2"
-                    onclick="copyToClipboard('{{result.director}}')"
-                  >
-                    Copy
-                  </button>
-                </p>
-                <p>
-                  <strong>Countries:</strong>
-                  {{result.countries}}
-                  <button
-                    class="button is-small is-responsive is-light ml-2"
-                    onclick="copyToClipboard('{{result.countries}}')"
-                  >
-                    Copy
-                  </button>
-                </p>
-                <p>
-                  <strong>Language:</strong>
-                  {{result.language}}
-                  <button
-                    class="button is-small is-responsive is-light ml-2"
-                    onclick="copyToClipboard('{{result.language}}')"
-                  >
-                    Copy
-                  </button>
-                </p>
-                <p>
-                  <strong>Runtime:</strong>
-                  {{result.runtime}}
-                  <button
-                    class="button is-small is-responsive is-light ml-2"
-                    onclick="copyToClipboard('{{result.runtime}}')"
-                  >
-                    Copy
-                  </button>
-                </p>
-                <p>
-                  <strong>Genres:</strong>
-                  {{result.genres}}
-                  <button
-                    class="button is-small is-responsive is-light ml-2"
-                    onclick="copyToClipboard('{{result.genres}}')"
-                  >
-                    Copy
-                  </button>
-                </p>
-                <p>
-                  <strong>Overview:</strong> {{result.overview}}
-                  <button
-                    class="button is-small is-responsive is-light ml-2"
-                    onclick="copyToClipboard('{{result.overview}}')"
-                  >
-                    Copy
-                  </button>
-                </p>
-                <p>
-                  <a href="{{result.tmdb_url}}">TMDB</a>
-                  <button
-                    class="button is-small is-responsive is-light ml-2"
-                    onclick="copyToClipboard('{{result.tmdb_url}}')"
-                  >
-                    Copy
-                  </button>
-                </p>
-                <p>
-                  <a href="{{result.lb_url}}">Letterboxd</a>
-                  <button
-                    class="button is-small is-responsive is-light ml-2"
-                    onclick="copyToClipboard('{{result.lb_url}}')"
-                  >
-                    Copy
-                  </button>
-                </p>
-                <p>
-                  <a href="{{result.imdb_url}}">IMDB</a>
-                  <button
-                    class="button is-small is-responsive is-light ml-2"
-                    onclick="copyToClipboard('{{result.imdb_url}}')"
-                  >
-                    Copy
-                  </button>
+                  Sorry, no movie details were found for the provided film title
+                  and release year.
                 </p>
               </div>
             </div>
           </div>
         </div>
+      </div>
+      {% else %}
+      <div class="card">
+        <div class="card-content">
+          <div class="columns">
+            <div class="column is-one-quarter">
+              <div class="container is-clipped">
+                <div id="poster-carousel" class="carousel">
+                  {% for poster_url in result.poster_paths %}
+                  <div
+                    class="poster-item"
+                    onclick="copyToClipboard('{{poster_url}}')"
+                  >
+                    <span>Click to copy</span>
+                    <figure class="image is-256x256">
+                      <img src="{{poster_url}}" alt="{{result.title}}" />
+                    </figure>
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <p>
+                <strong>Title:</strong>
+                <span
+                  class="has-tooltip-arrow underline-on-hover"
+                  data-tooltip="Click to copy"
+                  onclick="copyToClipboard('{{result.title}}')"
+                >
+                  {{result.title}}
+                </span>
+              </p>
+              <p>
+                <strong>Year of Release:</strong>
+                <span
+                  class="has-tooltip-arrow underline-on-hover"
+                  data-tooltip="Click to copy"
+                  onclick="copyToClipboard('{{result.year_of_release}}')"
+                >
+                  {{result.year_of_release}}
+                </span>
+              </p>
+              <p>
+                <strong>Director:</strong>
+                <span
+                  class="has-tooltip-arrow underline-on-hover"
+                  data-tooltip="Click to copy"
+                  onclick="copyToClipboard('{{result.director}}')"
+                >
+                  {{result.director}}
+                </span>
+              </p>
+              <p>
+                <strong>Countries:</strong>
+                <span
+                  class="has-tooltip-arrow underline-on-hover"
+                  data-tooltip="Click to copy"
+                  onclick="copyToClipboard('{{result.countries}}')"
+                >
+                  {{result.countries}}
+                </span>
+              </p>
+              <p>
+                <strong>Language:</strong>
+                <span
+                  class="has-tooltip-arrow underline-on-hover"
+                  data-tooltip="Click to copy"
+                  onclick="copyToClipboard('{{result.language}}')"
+                >
+                  {{result.language}}
+                </span>
+              </p>
+              <p>
+                <strong>Runtime:</strong>
+                <span
+                  class="has-tooltip-arrow underline-on-hover"
+                  data-tooltip="Click to copy"
+                  onclick="copyToClipboard('{{result.runtime}}')"
+                >
+                  {{result.runtime}}
+                </span>
+              </p>
+              <p>
+                <strong>Genres:</strong>
+                <span
+                  class="has-tooltip-arrow underline-on-hover"
+                  data-tooltip="Click to copy"
+                  onclick="copyToClipboard('{{result.genres}}')"
+                >
+                  {{result.genres}}
+                </span>
+              </p>
+              <p>
+                <strong>Overview:</strong>
+                <span
+                  class="has-tooltip-arrow underline-on-hover"
+                  data-tooltip="Click to copy"
+                  onclick="copyToClipboard('{{result.overview}}')"
+                >
+                  {{result.overview}}
+                </span>
+              </p>
+              <a
+                class="button is-small is-responsive is-transparent mt-4"
+                href="{{result.lb_url}}"
+                target="_blank"
+                oncontextmenu="copyToClipboard('{{result.lb_url}}')"
+                >LETTERBOXD</a
+              >
+              <a
+                class="button is-small is-responsive is-transparent mt-4"
+                href="{{result.imdb_url}}"
+                target="_blank"
+                oncontextmenu="copyToClipboard('{{result.imdb_url}}')"
+                >IMDB</a
+              >
+              <a
+                class="button is-small is-responsive is-transparent mt-4"
+                href="{{result.tmdb_url}}"
+                target="_blank"
+                oncontextmenu="copyToClipboard('{{result.tmdb_url}}')"
+                >TMDB</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
       {% endif %} {% endfor %}
     </section>
 
@@ -293,14 +309,16 @@
       </div>
     </footer>
 
+    <!-- Include Bulma Carousel JS -->
     <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
 
     <script>
+      // Function to copy text to the clipboard
       function copyToClipboard(text) {
         navigator.clipboard
           .writeText(text)
           .then(function () {
-            // Show the toast notification
+            // Show success toast notification
             const toast = document.getElementById("toast");
             toast.classList.remove("is-hidden");
             setTimeout(function () {
@@ -308,6 +326,7 @@
             }, 1000);
           })
           .catch(function (err) {
+            // Show error toast notification
             const toast = document.getElementById("toast2");
             toast.classList.remove("is-hidden");
             setTimeout(function () {
@@ -316,14 +335,15 @@
           });
       }
 
-      bulmaCarousel.attach('#poster-carousel', {
+      // Initialize Bulma Carousel
+      bulmaCarousel.attach("#poster-carousel", {
         slidesToScroll: 1,
         slidesToShow: 1,
         autoplay: true,
-        autoplaySpeed: 3000,  
+        autoplaySpeed: 3000,
         pauseOnHover: true,
         navigation: true,
-        pagination: false
+        pagination: false,
       });
     </script>
   </body>
