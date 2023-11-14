@@ -76,6 +76,38 @@
       span.underline-on-hover:hover {
         text-decoration: underline;
       }
+
+      /* Custom Tooltip changes*/
+      /* Add the fixed width to the tooltip */
+      .has-tooltip-arrow {
+        position: relative;
+        cursor: help;
+        border-bottom: 1px dotted #3273dc;
+        display: inline-block;
+      }
+
+      .has-tooltip-arrow::before {
+        position: absolute;
+        z-index: 1;
+        content: attr(data-tooltip);
+        background: #363636;
+        color: #fff;
+        font-size: 14px;
+        font-weight: bold;
+        opacity: 0;
+        padding: 8px;
+        border-radius: 4px;
+        white-space: nowrap; /* Prevent tooltip from breaking into multiple lines */
+        width: 110px; /* Set a fixed width for the tooltip */
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0.3s;
+      }
+
+      .has-tooltip-arrow:hover::before {
+        opacity: 1;
+        visibility: visible;
+      }
+
     </style>
   </head>
   <body class="columns is-flex-direction-column is-fullheight-100vh">
