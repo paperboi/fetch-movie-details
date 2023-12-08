@@ -68,6 +68,21 @@ def fetch_movie_details(film_name, year_of_release):
           poster_paths = [f"https://image.tmdb.org/t/p/original{poster['file_path']}" for poster in images_data['posters']]
       else:
           poster_paths = [f"https://image.tmdb.org/t/p/original/{movie_data['poster_path']}"]
+          
+      # Fetch video
+      videos_endpoint = f"https://api.themoviedb.org/3/movie/{movie_id}/videos?api_key={tmdb_api_key}"
+      videos_response = requests.get(videos_endpoint)
+      
+      if videos_response.status_code == 200:
+        videos_data = videos_response.json()
+        trailer_key = None
+        if 'results' in videos_data and len(videos_data['results']) > 0:
+          # Find the first video with type "Trailer"
+          for video in videos_data['results']:
+            if (video.get('type') == 'Trailer') and (video.get('site') == 'YouTube'):
+              print(f"{video.get('type')}, {video.get('site')}")
+              trailer_key = video.get('key')
+              break
       
       # Fetch genre details
       genres = movie_data['genres']
@@ -116,7 +131,8 @@ def fetch_movie_details(film_name, year_of_release):
         'tmdb_url': tmdb_url,
         'lb_url': lb_url,
         'imdb_url': imdb_url,
-        'poster_paths': poster_paths
+        'poster_paths': poster_paths,
+        'trailer_key': trailer_key
       }
 
       return result

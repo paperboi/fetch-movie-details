@@ -304,6 +304,16 @@
                   {{result.overview}}
                 </span>
               </p>
+              <br>
+              <div>
+                {% if result.trailer_key %}
+                  <iframe width="560" height="315" src="{{'https://www.youtube.com/embed/' + result.trailer_key}}" frameborder="0" allowfullscreen></iframe>
+                {% else %}
+                  <p>
+                    <strong>No trailer found.</strong>
+                  </p>
+                {% endif %}
+              </div>
               <a
                 class="button is-small is-responsive is-transparent mt-4"
                 href="{{result.lb_url}}"
